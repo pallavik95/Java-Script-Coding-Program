@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Profile URL Validator</title>
+</head>
+<body>Enter Linkedin profileUrl
+    <input id="url" type="text">
+    <p id="msg"></p>
+    <button onclick="urlvalidate()">Check Url</button>
+    <script>
+        function urlvalidate(){
+            let profileUrl = document.getElementById("url").value;
+            let message = document.getElementById("msg");
+            let regex = /(^https:\/\/)(www.)?(linkedin.com\/)?in\/([a-zA-Z0-9_-]{5,30}[a-zA-z0-9])\/?/gi;
+            if(profileUrl.match(regex)){
+                message.innerText = "valid Url";
+
+            }
+            else{
+                message.innerText = "invalid Url";
+            }
+        }
+    </script>
+</body>
+</html>

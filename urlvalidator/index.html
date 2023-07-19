@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>Enter Url
+    <input id="inputdata" type="text">
+    <p id="message"></p>
+    <button onclick="regexpression()">check</button>
+    <script>
+       
+        function regexpression(){
+            let inputurl = document.getElementById("inputdata").value;
+         let regexps = /(^http:\/\/|^https:\/\/)?[a-zA-Z0-9@#$%&*?=~//+]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z]{2,})?/g;
+        
+          let res = ""
+         if(inputurl.match(regexps)){
+           
+           res = "valid url";
+            }
+            else{
+                
+                res = "invalid url";
+            }
+            document.getElementById("message").innerText= res;
+        }
+    </script>
+</body>
+</html>
